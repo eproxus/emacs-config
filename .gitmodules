@@ -31,3 +31,6 @@
 [submodule "plugins/iedit"]
 	path = plugins/iedit
 	url = git://github.com/eproxus/emacs-iedit.git
+[submodule "modes/http-twiddle"]
+	path = modes/http-twiddle
+	url = https://github.com/hassy/http-twiddle.git

@@ -295,6 +295,9 @@
 ;; Highlight FIXME, BUG, TODO etc.
 (require 'fixme-mode)
 
+;; HTTP Twiddle mode to make HTTP requests from Emacs
+(require 'http-twiddle)
+
 (defun try-load-file (file)
   "Try to load a file and do nothing if it doesn't exist"
   (if (file-exists-p file)
