@@ -1,0 +1,380 @@
+2005-06-04  Norbert Koch  <viteno@xemacs.org>
+
+	* Makefile (VERSION): XEmacs package 1.10 released.
+
+2005-06-04  Adrian Aichner  <adrian@xemacs.org>
+
+	* Makefile (AUTHOR_VERSION): Update to /main/laptop/165.
+	* Makefile (MAINTAINER): Change to Adrian Aichner.
+	* clearcase.el: General sync and getting rid of fsf-compat
+	dependency.
+	* clearcase.el (clearcase-version-stamp): Sync.
+	* clearcase.el (clearcase-submit-bug-report): Sync.
+	* clearcase.el (clearcase-remove-branch-after-unheckout-when-only-0-version): New.
+	* clearcase.el (clearcase-annotate-fmt-string): New.
+	* clearcase.el (clearcase-annotate-file): Use
+	clearcase-annotate-fmt-string.
+	* clearcase.el (clearcase-browse-vtree-current-buffer): Sync
+	adding graphical prefix argument.
+	* clearcase.el (clearcase-browse-vtree-dired-file): Ditto.
+	* clearcase.el (clearcase-gui-vtree-browser): Use start-process
+	instead of start-process-shell-command.
+	* clearcase.el (clearcase-gui-clearexplorer): Ditto.
+	* clearcase.el (clearcase-gui-rebase): Ditto.
+	* clearcase.el (clearcase-gui-deliver): Ditto.
+	* clearcase.el (clearcase-gui-merge-manager): Ditto.
+	* clearcase.el (clearcase-gui-project-explorer): Ditto.
+	* clearcase.el (clearcase-gui-snapshot-view-updater): Ditto.
+	* clearcase.el (clearcase-sync-all-buffers): New.
+	* clearcase.el (clearcase-sync-file-if-needed): New.
+	* clearcase.el (clearcase-post-update-timer-function): Use
+	delete-itimer under XEmacs to remove fsf-compat/timer dependency.
+	* clearcase.el (clearcase-uncheckout): Sync, supporting new
+	clearcase-remove-branch-after-unheckout-when-only-0-version.
+	* clearcase.el (clearcase-browse-vtree): Sync adding graphical
+	prefix argument.
+	* clearcase.el (clearcase-vprop-timer-function): Use delete-itimer
+	under XEmacs to remove fsf-compat/timer dependency.
+	* clearcase.el (clearcase-read-version-name): Comment change.
+	* clearcase.el (clearcase-utl-make-writeable): Don't use #o syntax
+	for the benefit of older Emacsen.
+	* clearcase.el (clearcase-utl-make-unwriteable): Ditto.
+
+2004-10-10  Norbert Koch  <viteno@xemacs.org>
+
+	* Makefile (VERSION): XEmacs package 1.09 released.
+
+2004-08-16  Adrian Aichner  <adrian@xemacs.org>
+
+	* Makefile (AUTHOR_VERSION): Update to upstream /main/laptop/156.
+	* Makefile (REQUIRES): Add sh-script.
+	* clearcase.el: Full sync with upstream /main/laptop/156.
+	* clearcase.el (clearcase-version-stamp):
+	* clearcase.el (clearcase-sink-file-name): New.
+	* clearcase.el (executable):
+	* clearcase.el (clearcase-dump):
+	* clearcase.el (clearcase-keep-uncheckouts): New.
+	* clearcase.el (clearcase-keep-unhijacks): New.
+	* clearcase.el (clearcase-auto-dired-mode):
+	* clearcase.el (clearcase-display-status): Removed.
+	* clearcase.el (clearcase-display-branch): Removed.
+	* clearcase.el (clearcase-checkout-dir-on-mkelem): Removed.
+	* clearcase.el (clearcase-dired-show-view): New.
+	* clearcase.el (clearcase-verify-pre-mkelem-dir-checkout): New.
+	* clearcase.el (clearcase-checkin-switches): Removed.
+	* clearcase.el (clearcase-checkin-arguments): New.
+	* clearcase.el (clearcase-checkout-switches): Removed.
+	* clearcase.el (clearcase-checkout-arguments): New.
+	* clearcase.el (clearcase-normal-diff-switches): Removed.
+	* clearcase.el (clearcase-normal-diff-arguments): New.
+	* clearcase.el (clearcase-prefix-map): New.
+	* clearcase.el (clearcase-dired-insert-viewtag): New.
+	* clearcase.el (clearcase-dired-reformat-buffer):
+	* clearcase.el (clearcase-dired-list-checkouts): Removed.
+	* clearcase.el (clearcase-dired-list-checkouts-experimental): Removed.
+	* clearcase.el (clearcase-dired-list-hijacks): Removed.
+	* clearcase.el (clearcase-dired-prefix-map): New.
+	* clearcase.el (clearcase-dired-list-modified-files): New.
+	* clearcase.el (clearcase-comment-start-entry):
+	* clearcase.el (clearcase-comment-save-comment-for-buffer):
+	* clearcase.el (clearcase-edcs-edit):
+	* clearcase.el (clearcase-hijack-current-buffer): New.
+	* clearcase.el (clearcase-hijack-dired-files): New.
+	* clearcase.el (clearcase-unhijack-current-buffer): New.
+	* clearcase.el (clearcase-unhijack-dired-files): New.
+	* clearcase.el (clearcase-annotate-file): New.
+	* clearcase.el (clearcase-annotate-current-buffer): New.
+	* clearcase.el (clearcase-annotate-dired-file): New.
+	* clearcase.el (clearcase-find-checkouts-in-current-view):
+	* clearcase.el (clearcase-ucm-set-activity-current-dir):
+	* clearcase.el (clearcase-ucm-describe-current-activity):
+	* clearcase.el (clearcase-edit-checkout-comment-current-buffer): New.
+	* clearcase.el (clearcase-edit-checkout-comment-dired-file): New.
+	* clearcase.el (clearcase-edit-checkout-comment): New.
+	* clearcase.el (clearcase-applet-diff-pred-current-buffer): Removed.
+	* clearcase.el (clearcase-gui-diff-pred-current-buffer): New.
+	* clearcase.el (clearcase-applet-diff-pred-dired-file): Removed.
+	* clearcase.el (clearcase-gui-diff-pred-dired-file): New.
+	* clearcase.el (clearcase-gui-diff-branch-base-current-buffer):
+	* clearcase.el (clearcase-gui-diff-branch-base-dired-file):
+	* clearcase.el (clearcase-applet-diff-branch-base-current-buffer()): Removed.
+	* clearcase.el (clearcase-gui-diff-branch-base-current-buffer()): New.
+	* clearcase.el (clearcase-applet-diff-branch-base-dired-file()): Removed.
+	* clearcase.el (clearcase-gui-diff-branch-base-dired-file()): New.
+	* clearcase.el (clearcase-applet-diff-named-version-current-buffer): Removed.
+	* clearcase.el (clearcase-gui-diff-named-version-current-buffer): New.
+	* clearcase.el (clearcase-applet-diff-named-version-dired-file): Removed.
+	* clearcase.el (clearcase-gui-diff-named-version-dired-file): New.
+	* clearcase.el (clearcase-applet-diff-file-with-version): Removed.
+	* clearcase.el (clearcase-gui-diff-file-with-version): New.
+	* clearcase.el (clearcase-version-other-window): New.
+	* clearcase.el (clearcase-applet-vtree-browser-current-buffer): Removed.
+	* clearcase.el (clearcase-gui-vtree-browser-current-buffer): New.
+	* clearcase.el (clearcase-applet-vtree-browser-dired-file): Removed.
+	* clearcase.el (clearcase-gui-vtree-browser-dired-file): New.
+	* clearcase.el (clearcase-applet-vtree-browser): Removed.
+	* clearcase.el (clearcase-gui-vtree-browser): New.
+	* clearcase.el (clearcase-applet-clearexplorer): Removed.
+	* clearcase.el (clearcase-gui-clearexplorer): New.
+	* clearcase.el (clearcase-applet-deliver): Removed.
+	* clearcase.el (clearcase-gui-deliver): New.
+	* clearcase.el (clearcase-applet-rebase): Removed.
+	* clearcase.el (clearcase-gui-rebase): New.
+	* clearcase.el (clearcase-applet-merge-manager): Removed.
+	* clearcase.el (clearcase-gui-merge-manager): New.
+	* clearcase.el (clearcase-applet-project-explorer): Removed.
+	* clearcase.el (clearcase-gui-project-explorer): New.
+	* clearcase.el (clearcase-applet-snapshot-view-updater): Removed.
+	* clearcase.el (clearcase-gui-snapshot-view-updater): New.
+	* clearcase.el (clearcase-update-default-directory):
+	* clearcase.el (clearcase-update-current-buffer):
+	* clearcase.el (clearcase-post-update-timer): New.
+	* clearcase.el (clearcase-post-update-work-queue): New.
+	* clearcase.el (clearcase-post-update-schedule-work): New.
+	* clearcase.el (clearcase-post-update-timer-function): Retain fix
+	to ignore nil viewtag.
+	* clearcase.el (clearcase-post-update-check-process-buffer): New.
+	* clearcase.el (clearcase-sync-after-scopes-updated): New.
+	* clearcase.el (clearcase-update):
+	* clearcase.el (clearcase-file-ok-to-hijack): New.
+	* clearcase.el (clearcase-hijack-seq): New.
+	* clearcase.el (clearcase-hijack): New.
+	* clearcase.el (clearcase-file-ok-to-unhijack): New.
+	* clearcase.el (clearcase-unhijack): New.
+	* clearcase.el (cleartool-unhijack-parse-for-kept-files): New.
+	* clearcase.el (clearcase-utl-files-in-same-view-p): New.
+	* clearcase.el (clearcase-unhijack-seq): New.
+	* clearcase.el (clearcase-file-ok-to-mkelem):
+	* clearcase.el (clearcase-commented-mkelem):
+	* clearcase.el (clearcase-commented-mkelem-seq):
+	* clearcase.el (clearcase-commented-checkin):
+	* clearcase.el (clearcase-file-ok-to-checkout):
+	* clearcase.el (clearcase-commented-checkout):
+	* clearcase.el (cleartool-unco-parse-for-kept-file): New.
+	* clearcase.el (clearcase-uncheckout):
+	* clearcase.el (clearcase-describe):
+	* clearcase.el (clearcase-list-history):
+	* clearcase.el (clearcase-diff-files):
+	* clearcase.el (clearcase-fprop-unparse-properties):
+	* clearcase.el (clearcase-fprop-display-properties):
+	* clearcase.el (clearcase-fprop-dump): Removed.
+	* clearcase.el (clearcase-fprop-dump-to-current-buffer): New.
+	* clearcase.el (clearcase-fprop-hijacked): New.
+	* clearcase.el (clearcase-fprop-fmt-string):
+	* clearcase.el (clearcase-fprop-read-properties):
+	* clearcase.el (clearcase-vprop-dump): Removed.
+	* clearcase.el (clearcase-vprop-dump-to-current-buffer): New.
+	* clearcase.el (clearcase-vprop-prefetch-queue): Removed.
+	* clearcase.el (clearcase-vprop-work-queue): New.
+	* clearcase.el (clearcase-vprop-schedule-fetch): Removed.
+	* clearcase.el (clearcase-vprop-schedule-work): New.
+	* clearcase.el (clearcase-vprop-timer-function):
+	* clearcase.el (clearcase-vprop-read-properties):
+	* clearcase.el (clearcase-vprop-read-activities-asynchronously):
+	* clearcase.el (clearcase-vprop-read-activities-synchronously): Removed.
+	* clearcase.el (clearcase-file-appears-modified-since-checkout-p):
+	* clearcase.el (clearcase-file-snapshot-root):
+	* clearcase.el (clearcase-ct-do-cleartool-command):
+	* clearcase.el (clearcase-ct-get-command-stdout):
+	* clearcase.el (clearcase-ct-kill-tq):
+	* clearcase.el (clearcase-do-command):
+	* clearcase.el (clearcase-path-file-in-any-scopes): New.
+	* clearcase.el (clearcase-path-file-in-scope): New.
+	* clearcase.el (clearcase-sync-after-file-updated-from-vob): New.
+	* clearcase.el (clearcase-sync-from-disk-if-needed): New.
+	* clearcase.el (clearcase-utl-populate-and-view-buffer): New.
+	* clearcase.el (clearcase-utl-edit-and-view-buffer): New.
+	* clearcase.el (clearcase-utl-touch-file): New.
+	* clearcase.el (clearcase-utl-any): New.
+	* clearcase.el (clearcase-utl-every): New.
+	* clearcase.el (clearcase-utl-make-writeable): New.
+	* clearcase.el (clearcase-utl-make-unwriteable): New.
+	* clearcase.el (clearcase-menu-contents-minimised):
+	* clearcase.el (clearcase-menu-contents):
+	* clearcase.el (clearcase-dired-current-ok-to-hijack): New.
+	* clearcase.el (clearcase-dired-current-ok-to-unhijack): New.
+	* clearcase.el (clearcase-dired-marked-ok-to-checkout):
+	* clearcase.el (clearcase-dired-marked-ok-to-uncheckout):
+	* clearcase.el (clearcase-dired-marked-ok-to-hijack): New.
+	* clearcase.el (clearcase-dired-marked-ok-to-mkelem):
+	* clearcase.el (clearcase-dired-marked-ok-to-unhijack): New.
+	* clearcase.el (clearcase-dired-menu-contents-minimised):
+	* clearcase.el (clearcase-dired-menu-contents):
+	* clearcase.el (clearcase-non-lt-registry-server-online-p):
+	* clearcase.el (clearcase-lt-registry-server-online-p):
+	* clearcase.el (clearcase-hook-find-file-hook):
+	* clearcase.el (clearcase-hook-dired-mode-hook):
+	* clearcase.el (clearcase-hook-dired-after-readin-hook):
+	* clearcase.texi: Add dircategory XEmacs.
+
+2003-10-31  Norbert Koch  <viteno@xemacs.org>
+
+	* Makefile (VERSION): XEmacs package 1.08 released.
+
+2003-10-19  Norbert Koch  <viteno@xemacs.org>
+
+	* Makefile (VERSION): XEmacs package 1.07 released.
+
+2003-10-18  Adrian Aichner  <adrian@xemacs.org>
+
+	* clearcase.el: Sync with upstream version /main/laptop/116.
+	* clearcase.el (clearcase-version-stamp):
+	* clearcase.el (clearcase-submit-bug-report):
+	* clearcase.el (clearcase-on-mswindows):
+	* clearcase.el (clearcase-on-cygwin32): Removed.
+	* clearcase.el (clearcase-on-cygwin): New.
+	* clearcase.el (clearcase-set-to-new-activity): New.
+	* clearcase.el (clearcase-prompt-for-activity-names): New.
+	* clearcase.el (clearcase-dired-reformat-buffer): Typo fix for
+	/main/laptop/116.
+	* clearcase.el (clearcase-path-follow-if-vob-slink): New.
+	* clearcase.el (clearcase-dired-list-checkouts):
+	* clearcase.el (clearcase-dired-list-checkouts-experimental):
+	* clearcase.el (clearcase-dired-list-hijacks):
+	* clearcase.el (clearcase-edcs-edit):
+	* clearcase.el (clearcase-edcs-save):
+	* clearcase.el (clearcase-read-new-activity-name): New.
+	* clearcase.el (clearcase-read-mkact-args): New.
+	* clearcase.el (clearcase-make-internally-named-activity): New.
+	* clearcase.el (clearcase-ucm-mkact-current-dir):
+	* clearcase.el (clearcase-ucm-mkact-named-current-dir): Removed.
+	* clearcase.el (clearcase-ucm-set-activity):
+	* clearcase.el (clearcase-next-action):
+	* clearcase.el (clearcase-compute-next-action):
+	* clearcase.el (clearcase-applet-diff-file-with-version):
+	* clearcase.el (clearcase-diff-file-with-version):
+	* clearcase.el (clearcase-applet-vtree-browser):
+	* clearcase.el (clearcase-applet-clearexplorer): New.
+	* clearcase.el (clearcase-uncheckout):
+	* clearcase.el (clearcase-commented-mkbrtype):
+	* clearcase.el (clearcase-browse-vtree):
+	* clearcase.el (clearcase-list-history):
+	* clearcase.el (clearcase-diff-files):
+	* clearcase.el (clearcase-fprop-unparse-properties):
+	* clearcase.el (clearcase-fprop-canonicalise-path):
+	* clearcase.el (clearcase-fprop-vob-slink-text): New.
+	* clearcase.el (clearcase-fprop-file-is-vob-slink-p): New.
+	* clearcase.el (clearcase-fprop-fmt-string): Regexp fix for
+	/main/laptop/116.
+	* clearcase.el (clearcase-vprop-timer-function): Fix for
+	/main/laptop/116 to not the properties for nil viewtag.
+	* clearcase.el (clearcase-vprop-activities):
+	* clearcase.el (clearcase-lsstream-fmt-string):
+	* clearcase.el (clearcase-vprop-read-properties):
+	* clearcase.el (clearcase-vprop-finish-reading-activities):
+	* clearcase.el (clearcase-file-appears-modified-since-checkout-p):
+	* clearcase.el (clearcase-viewdat-to-uuid):
+	* clearcase.el (clearcase-view-uuid-to-tag):
+	* clearcase.el (clearcase-file-is-in-view-p):
+	* clearcase.el (clearcase-ct-start-cleartool):
+	* clearcase.el (clearcase-ct-sentinel): New.
+	* clearcase.el (clearcase-ct-do-cleartool-command):
+	* clearcase.el (clearcase-ct-cd):
+	* clearcase.el (clearcase-ct-blocking-call):
+	* clearcase.el (clearcase-viewtag-start-view):
+	* clearcase.el (clearcase-vxpath-of-branch-base):
+	* clearcase.el (clearcase-vxpath-get-version-in-buffer):
+	* clearcase.el (clearcase-path-canonical):
+	* clearcase.el (clearcase-path-native):
+	* clearcase.el (clearcase-buffer-revert):
+	* clearcase.el (clearcase-utl-filetimes-close): New.
+	* clearcase.el (clearcase-menu-contents-minimised):
+	* clearcase.el (clearcase-menu-contents):
+	* clearcase.el (clearcase-dired-menu-contents-minimised):
+	* clearcase.el (clearcase-dired-menu-contents):
+	* clearcase.el (clearcase-get-version-string):
+	* clearcase.el (clearcase-non-lt-registry-server-online-p):
+	* clearcase.el (clearcase-lt-registry-server-online-p):
+	* clearcase.el (clearcase-hook-find-file-hook):
+	* clearcase.el (clearcase-hook-vxpath-find-file-hook):
+	* clearcase.el (clearcase-suppress-vc-within-mvfs-file-name-handler): Removed.
+	* clearcase.el (clearcase-vxpath-file-name-handler):
+	* clearcase.el (vc-registered): New.
+	* clearcase.el ('clearcase-install): New.  Prepare for XEmacs 21.5
+	behavior support.
+	* clearcase.el ('clearcase-uninstall): New.  Ditto.
+	* clearcase.el (clearcase-integrate): Add autoload cookie.
+	* clearcase.el (clearcase-unintegrate): Ditto.
+	* clearcase.el (clearcase-v6): New.
+
+2003-03-09  Ben Wing  <ben@xemacs.org>
+
+	* Makefile:
+	Delete explicit compile:: and binkit: rules.
+	Don't add custom-load.elc to the list of generated elc's.
+	Use STANDARD_DOCS instead of explicitly giving the targets
+	and dependencies.
+	Move the include of XEmacs.rules to the end of the file.
+
+2003-03-02  Norbert Koch  <nk@viteno.net>
+
+	* Makefile (VERSION): XEmacs package 1.06 released.
+
+	* Makefile (VERSION): XEmacs package 1.05 released.
+
+2003-02-24  Michael Diers  <mdiers@xemacs.org>
+
+	* clearcase.el (clearcase-xemacs-package-maintainer-address): New
+	constant.
+	* clearcase.el (clearcase-submit-bug-report): Recipient is
+	clearcase-xemacs-package-maintainer-address instead of
+	clearcase-maintainer-address.
+	* Makefile (MAINTAINER): Change to xemacs.org address.
+
+2002-11-29  Ben Wing  <ben@xemacs.org>
+
+	* .cvsignore: Remove files now handled automatically by CVS.
+	* Makefile: Use `compile' instead of hard-coded `all'.
+
+2002-10-15  Ville Skyttä  <scop@xemacs.org>
+
+	* Makefile (srckit): Remove.
+
+2002-07-16  Adrian Aichner  <adrian@xemacs.org>
+
+	* .cvsignore: Add generated .info* and .html files.
+
+2002-06-27  Steve Youngs  <youngs@xemacs.org>
+
+	* Makefile (VERSION): XEmacs package 1.04 released.
+
+2002-05-24  Patrik Hagglund  <patha@softlab.ericsson.se>
+
+	* clearcase.el (clearcase-vxpath-get-version-in-buffer): Fix Emacs
+	20 compatibility buglet.
+
+2002-02-12  Michael Diers  <mdiers@elego.de>
+
+	* clearcase.el (clearcase-get-version-string): Fix version
+	detection for Cygwin.
+
+2002-01-24  Steven E. Harris  <seh@speakeasy.org>
+
+	* clearcase.el (clearcase-dired-reformat-buffer): Fix path
+	conversions for cygwin.
+	(clearcase-dired-list-checkouts): Fix newline escape for proper
+	'ct lsco' output.
+	(clearcase-applet-diff-file-with-version): Fix path conversions
+	for cygwin.
+	(clearcase-diff-file-with-version): Clean up temp. file.
+	(clearcase-diff-files): Fix path conversions for cygwin.
+
+2002-01-21  Adrian Aichner  <adrian@xemacs.org>
+
+	* clearcase.el (clearcase-vxpath-get-version-in-buffer): Make
+	temp-file writable if necessary to avoid failure of `delete-file'.
+
+2002-01-07  Adrian Aichner  <adrian@xemacs.org>
+
+	* Makefile (HTML_FILES): New.
+	* Makefile (HTML_DEP): New.
+	* Makefile (all): Move $(INFO_FILES) dependency to end.
+
+2001-12-30  Adrian Aichner  <adrian@xemacs.org>
+
+	* clearcase.texi: Add missing direntry.
+
+2001-12-09  Adrian Aichner  <adrian@xemacs.org>
+
+	* Create package.
+

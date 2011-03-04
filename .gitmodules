@@ -1,0 +1,33 @@
+[submodule "modes/erlware-mode"]
+	path = modes/erlware-mode
+	url = https://github.com/erlware/erlware-mode.git
+[submodule "modes/markdown-mode"]
+	path = modes/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
+[submodule "plugins/distel"]
+	path = plugins/distel
+	url = https://github.com/massemanet/distel.git
+[submodule "plugins/full-ack"]
+	path = plugins/full-ack
+	url = https://github.com/nschum/full-ack.git
+[submodule "plugins/smex"]
+	path = plugins/smex
+	url = http://github.com/nonsequitur/smex.git
+[submodule "plugins/autopair"]
+	path = plugins/autopair
+	url = https://github.com/emacsmirror/autopair.git
+[submodule "modes/fixme-mode"]
+	path = modes/fixme-mode
+	url = https://github.com/emacsmirror/fixme-mode.git
+[submodule "modes/graphviz-dot-mode"]
+	path = modes/graphviz-dot-mode
+	url = https://github.com/emacsmirror/graphviz-dot-mode.git
+[submodule "modes/yaml-mode"]
+	path = modes/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "plugins/auto-complete"]
+	path = plugins/auto-complete
+	url = https://github.com/m2ym/auto-complete.git
+[submodule "plugins/iedit"]
+	path = plugins/iedit
+	url = git://github.com/eproxus/emacs-iedit.git

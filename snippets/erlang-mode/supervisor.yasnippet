@@ -1,0 +1,44 @@
+# -*- mode: snippet -*-
+# name: supervisor
+# key: supervisor
+# --
+%% @doc
+-module(${1:`(file-name-nondirectory
+               (file-name-sans-extension
+                 (or (buffer-file-name) (buffer-name))))`}).
+-behaviour(supervisor).
+
+%% Interface exports
+-export([start_link/0]).
+
+%% Callback exports
+-export([init/1]).
+
+%%==============================================================================
+%% Interface exports
+%%==============================================================================
+
+start_link() ->
+    supervisor:start_link(?MODULE, no_args).
+
+%%==============================================================================
+%% Callback exports
+%%==============================================================================
+
+init(no_args) ->
+    Id = term(),
+    StartFunc = {M, F, A},
+    M = F = atom(),
+    A = [term()],
+    Restart = permanent | transient | temporary,
+    Shutdown = brutal_kill | int()>=0 | infinity,
+    Type = worker | supervisor,
+    Modules = [Module] | dynamic,
+    ChildSpec = {Id, StartFunc, Restart, Shutdown, Type, Modules},
+    ok, {{one_for_one, MaxR, MaxT}, [ChildSpec]}}
+
+%%==============================================================================
+%% Internal functions
+%%==============================================================================
+
+
