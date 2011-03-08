@@ -270,15 +270,13 @@
 ;(require 'yasnippet)
 ;(yas/initialize)
 
-;; Remove trailing whitespace and tabs in buffer before saving
+;; Remove trailing whitespace in buffer, untabify before saving
 ;; - excluded make, because it barfs on spaces instead of tabs as indentation
-;; - Markdown needs empty lines with spaces between paragraphs in lists
 (add-hook 'before-save-hook
-          (lambda () (when (not (memq major-mode '(markdown-mode
-                                                   makefile-mode
-                                                   makefile-bsdmake-mode)))
-                       (delete-trailing-whitespace)
-                       (whitespace-cleanup))))
+          (lambda ()
+            (delete-trailing-whitespace)
+            (when (not (memq major-mode '(makefile-mode makefile-bsdmake-mode)))
+              (whitespace-cleanup))))
 
 (add-hook 'align-load-hook
           (lambda ()
