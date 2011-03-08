@@ -270,8 +270,14 @@
 ;(yas/initialize)
 
 ;; Remove trailing whitespace and tabs in buffer before saving
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-;(add-hook 'before-save-hook 'whitespace-cleanup) ; Removes tabs, incompitable with make :-(
+;; - excluded make, because it barfs on spaces instead of tabs as indentation
+;; - Markdown needs empty lines with spaces between paragraphs in lists
+(add-hook 'before-save-hook
+          (lambda () (when (not (memq major-mode '(markdown-mode
+                                                   makefile-mode
+                                                   makefile-bsdmake-mode)))
+                       (delete-trailing-whitespace)
+                       (whitespace-cleanup))))
 
 (add-hook 'align-load-hook
           (lambda ()
