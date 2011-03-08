@@ -75,6 +75,7 @@
  '(tabbar-cycling-scope (quote tabs))
  '(tool-bar-mode nil nil (tool-bar))
  '(truncate-lines t)
+ '(vc-follow-symlinks nil)
  '(visible-bell nil)
  '(whitespace-modes (quote (ada-mode asm-mode autoconf-mode awk-mode c-mode c++-mode cc-mode change-log-mode cperl-mode electric-nroff-mode emacs-lisp-mode f90-mode fortran-mode html-mode html3-mode java-mode jde-mode ksh-mode latex-mode LaTeX-mode lisp-mode m4-mode makefile-mode modula-2-mode nroff-mode objc-mode pascal-mode perl-mode prolog-mode python-mode scheme-mode sgml-mode sh-mode shell-script-mode simula-mode tcl-mode tex-mode texinfo-mode vrml-mode xml-mode erlang-mode)))
  '(wrangler-search-paths (quote ("/home/alind" "../ebin" "." "../include")))
