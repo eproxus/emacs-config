@@ -262,8 +262,7 @@
 (setq cssm-mirror-mode nil)
 
 ;; Markdown mode
-(autoload 'markdown-mode "markdown-mode/markdown-mode.el"
-  "Major mode for editing Markdown files" t)
+(require 'markdown-mode)
 (setq auto-mode-alist
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
