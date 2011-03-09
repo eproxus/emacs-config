@@ -19,26 +19,23 @@
 %%==============================================================================
 
 start_link() ->
-    supervisor:start_link(?MODULE, no_args).
+    supervisor:start_link({local, ?MODULE}, ?MODULE, no_args).
 
 %%==============================================================================
 %% Callback exports
 %%==============================================================================
 
 init(no_args) ->
-    Id = term(),
-    StartFunc = {M, F, A},
-    M = F = atom(),
-    A = [term()],
-    Restart = permanent | transient | temporary,
-    Shutdown = brutal_kill | int()>=0 | infinity,
-    Type = worker | supervisor,
-    Modules = [Module] | dynamic,
-    ChildSpec = {Id, StartFunc, Restart, Shutdown, Type, Modules},
-    ok, {{one_for_one, MaxR, MaxT}, [ChildSpec]}}
+    RestartStrategy = one_for_one, % one_for_all | rest_for_one | simple_one_for_one
+    MaxR = MaxT = 5,
+    ChildSpec = {Id = child,
+                 StartMFA = {m, f, [a]},
+                 Restart = transient, % permanent | temporary
+                 Shutdown = infinity, % brutal_kill | int() % ms
+                 Type = worker, % supervisor
+                 Modules = [child]}, % dynamic
+    {ok, {{RestartStrategy, MaxR, MaxT}, [ChildSpec]}}.
 
 %%==============================================================================
 %% Internal functions
 %%==============================================================================
-
-
