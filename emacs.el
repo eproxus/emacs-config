@@ -241,7 +241,7 @@
          (local-file (file-relative-name
                       temp-file
                       (file-name-directory buffer-file-name))))
-    (list "~/Applications/bin/flymake" (list local-file))))
+    (list "~/.emacs.d/scripts/flymake" (list local-file))))
 
 (setq flymake-allowed-file-name-masks '(("\\.erl\\'" flymake-erlang-init)))
 (add-hook 'after-save-hook 'flymake-start-syntax-check)
@@ -252,6 +252,17 @@
       (if help (message "%s" help)))))
 
 (add-hook 'post-command-hook 'my-flymake-show-help)
+
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+      (list "~/.emacs.d/scripts/pycheck"  (list local-file))))
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pyflakes-init)))
 
 ;; Graphviz mode
 ;(load-file "~/.emacs.d/graphviz-dot-mode.el")

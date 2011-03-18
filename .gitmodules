@@ -34,3 +34,6 @@
 [submodule "modes/http-twiddle"]
 	path = modes/http-twiddle
 	url = https://github.com/hassy/http-twiddle.git
+[submodule "scripts"]
+	path = scripts
+	url = https://eproxus@github.com/eproxus/scripts.git
