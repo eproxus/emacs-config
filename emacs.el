@@ -242,7 +242,7 @@
          (local-file (file-relative-name
                       temp-file
                       (file-name-directory buffer-file-name))))
-    (list "~/.emacs.d/scripts/flymake" (list local-file))))
+    (list "~/.emacs.d/scripts/erlang_flymake" (list local-file))))
 
 (setq flymake-allowed-file-name-masks '(("\\.erl\\'" flymake-erlang-init)))
 (add-hook 'after-save-hook 'flymake-start-syntax-check)
