@@ -84,6 +84,9 @@
 (global-set-key (kbd "S-<delete>") 'nuke-line)                 ; Delete the whole line with Shift-DEL
 (global-set-key (kbd "S-<kp-delete>") 'nuke-line)              ; Delete the whole line with Shift-DEL (OS X)
 
+(global-set-key (kbd "C-D")   'call-last-kbd-macro)            ; Run macro
+(global-set-key (kbd "C-S-D") 'toggle-kbd-macro-recording-on)  ; Start/stop macro
+
 ;;; === Custom functions =====================================================
 
 (defun duplicate-current-line ()
@@ -165,3 +168,17 @@
     (find-file
      (if arg (nth arg recently-killed-list)
        (car recently-killed-list)))))
+
+(defun toggle-kbd-macro-recording-on ()
+  "One-key keyboard macros: turn recording on."
+  (interactive)
+  (define-key global-map (this-command-keys)
+   'toggle-kbd-macro-recording-off)
+  (start-kbd-macro nil))
+
+(defun toggle-kbd-macro-recording-off ()
+  "One-key keyboard macros: turn recording off."
+  (interactive)
+  (define-key global-map (this-command-keys)
+    'toggle-kbd-macro-recording-on)
+  (end-kbd-macro))
