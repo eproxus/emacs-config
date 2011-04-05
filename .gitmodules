@@ -1,39 +1,39 @@
 [submodule "modes/erlware-mode"]
-	path = modes/erlware-mode
-	url = https://github.com/erlware/erlware-mode.git
+    path = modes/erlware-mode
+    url = https://github.com/erlware/erlware-mode.git
 [submodule "modes/markdown-mode"]
-	path = modes/markdown-mode
-	url = git://jblevins.org/git/markdown-mode.git
+    path = modes/markdown-mode
+    url = git://jblevins.org/git/markdown-mode.git
 [submodule "plugins/distel"]
-	path = plugins/distel
-	url = https://github.com/massemanet/distel.git
+    path = plugins/distel
+    url = https://github.com/massemanet/distel.git
 [submodule "plugins/full-ack"]
-	path = plugins/full-ack
-	url = https://github.com/nschum/full-ack.git
+    path = plugins/full-ack
+    url = https://github.com/nschum/full-ack.git
 [submodule "plugins/smex"]
-	path = plugins/smex
-	url = http://github.com/nonsequitur/smex.git
+    path = plugins/smex
+    url = http://github.com/nonsequitur/smex.git
 [submodule "plugins/autopair"]
-	path = plugins/autopair
-	url = https://github.com/emacsmirror/autopair.git
+    path = plugins/autopair
+    url = https://github.com/emacsmirror/autopair.git
 [submodule "modes/fixme-mode"]
-	path = modes/fixme-mode
-	url = https://github.com/emacsmirror/fixme-mode.git
+    path = modes/fixme-mode
+    url = https://github.com/emacsmirror/fixme-mode.git
 [submodule "modes/graphviz-dot-mode"]
-	path = modes/graphviz-dot-mode
-	url = https://github.com/emacsmirror/graphviz-dot-mode.git
+    path = modes/graphviz-dot-mode
+    url = https://github.com/emacsmirror/graphviz-dot-mode.git
 [submodule "modes/yaml-mode"]
-	path = modes/yaml-mode
-	url = https://github.com/yoshiki/yaml-mode.git
+    path = modes/yaml-mode
+    url = https://github.com/yoshiki/yaml-mode.git
 [submodule "plugins/auto-complete"]
-	path = plugins/auto-complete
-	url = https://github.com/m2ym/auto-complete.git
+    path = plugins/auto-complete
+    url = https://github.com/m2ym/auto-complete.git
 [submodule "plugins/iedit"]
-	path = plugins/iedit
-	url = git://github.com/eproxus/emacs-iedit.git
+    path = plugins/iedit
+    url = git://github.com/eproxus/emacs-iedit.git
 [submodule "modes/http-twiddle"]
-	path = modes/http-twiddle
-	url = https://github.com/hassy/http-twiddle.git
+    path = modes/http-twiddle
+    url = https://github.com/hassy/http-twiddle.git
 [submodule "scripts"]
-	path = scripts
-	url = https://eproxus@github.com/eproxus/scripts.git
+    path = scripts
+    url = https://github.com/eproxus/scripts.git
