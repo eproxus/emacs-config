@@ -1,7 +1,12 @@
+;; Plugins path
 (let ((default-directory "~/.emacs.d/plugins"))
   (normal-top-level-add-subdirs-to-load-path))
+
+;; Modes path
 (let ((default-directory "~/.emacs.d/modes"))
   (normal-top-level-add-subdirs-to-load-path))
+
+;; Themes path
 (let ((default-directory "~/.emacs.d"))
   (normal-top-level-add-to-load-path '("themes")))
 
