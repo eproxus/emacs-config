@@ -6,6 +6,8 @@
 
 (if (eq system-type 'darwin)
     (progn
+      (global-set-key [home] 'move-beginning-of-line)
+      (global-set-key [end]  'move-end-of-line)
       (global-set-key [kp-delete] 'delete-char) ; Make delete key work
       (global-set-key (kbd "M-2") "@")
       (global-set-key (kbd "M-1") "`")
