@@ -37,3 +37,6 @@
 [submodule "scripts"]
     path = scripts
     url = https://github.com/eproxus/scripts.git
+[submodule "themes/solarized"]
+	path = themes/solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized
