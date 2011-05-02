@@ -9,6 +9,8 @@
 ;; Themes path
 (let ((default-directory "~/.emacs.d"))
   (normal-top-level-add-to-load-path '("themes")))
+(let ((default-directory "~/.emacs.d/themes"))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;; Make Command become Ctrl for Emacs on OS X.
 (setq mac-command-modifier 'ctrl)
