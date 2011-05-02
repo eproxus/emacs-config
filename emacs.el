@@ -125,18 +125,18 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#2e3436" :foreground "#d3d7cf" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Menlo"))))
- '(compilation-error ((t (:inherit font-lock-warning-face :foreground "red"))))
- '(cursor ((t (:background "white" :foreground "black"))))
- '(flymake-errline ((((class color) (background dark)) (:background "#691A1B" :underline "#ef2929" :weight bold))))
- '(flymake-warnline ((((class color) (background dark)) (:background "#8f5902" :underline "#fce94f" :weight bold))))
- '(font-lock-fixme-face ((t (:stipple nil :background "Black" :foreground "OrangeRed1" :inverse-video nil :underline t :slant normal :weight bold))) t)
- '(font-lock-function-name-face ((t (:foreground "#729fcf" :underline t :weight bold))))
- '(font-lock-string-face ((t (:foreground "#c29fbe" :slant italic))))
- '(font-lock-variable-name-face ((t (:foreground "#c4a000" :weight bold))))
- '(fringe ((t (:background "grey23"))))
- '(header-line ((default (:inherit mode-line :box (:line-width 1 :color "darkgrey"))) (((class color grayscale) (background light)) (:background "grey90" :foreground "grey20" :box nil))))
- '(hl-line ((t (:background "gray23"))))
- '(linum ((t (:inherit (shadow default) :background "gray23"))))
+; '(compilation-error ((t (:inherit font-lock-warning-face :foreground "red"))))
+; '(cursor ((t (:background "white" :foreground "black"))))
+; '(flymake-errline ((((class color) (background dark)) (:background "#691A1B" :underline "#ef2929" :weight bold))))
+; '(flymake-warnline ((((class color) (background dark)) (:background "#8f5902" :underline "#fce94f" :weight bold))))
+; '(font-lock-fixme-face ((t (:stipple nil :background "Black" :foreground "OrangeRed1" :inverse-video nil :underline t :slant normal :weight bold))) t)
+; '(font-lock-function-name-face ((t (:foreground "#729fcf" :underline t :weight bold))))
+; '(font-lock-string-face ((t (:foreground "#c29fbe" :slant italic))))
+; '(font-lock-variable-name-face ((t (:foreground "#c4a000" :weight bold))))
+; '(fringe ((t (:background "grey23"))))
+; '(header-line ((default (:inherit mode-line :box (:line-width 1 :color "darkgrey"))) (((class color grayscale) (background light)) (:background "grey90" :foreground "grey20" :box nil))))
+; '(hl-line ((t (:background "gray23"))))
+; '(linum ((t (:inherit (shadow default) :background "gray23"))))
  '(minibuffer-prompt ((t (:foreground "#729fcf" :weight bold))))
  '(mumamo-background-chunk-major ((((class color) (min-colors 88) (background dark)) nil)))
  '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) (:background "gray15"))))
@@ -144,11 +144,8 @@
  '(mumamo-background-chunk-submode3 ((((class color) (min-colors 88) (background dark)) (:background "grey15"))))
  '(mumamo-background-chunk-submode4 ((((class color) (min-colors 88) (background dark)) (:background "gray15"))))
  '(rng-error ((t (:inherit flymake-errline))))
- '(show-paren-match ((nil (:background "gray15"))))
- '(show-paren-mismatch ((((class color)) (:background "red4"))))
- '(tabbar-default-face ((t (:inherit variable-pitch))))
- '(tabbar-selected-face ((t (:inherit tabbar-default-face :background "white" :box (:line-width 2 :color "white") :weight bold))))
- '(tabbar-unselected-face ((t (:inherit tabbar-default-face :box (:line-width 2 :color "white" :style released-button)))))
+; '(show-paren-match ((nil (:background "gray15"))))
+; '(show-paren-mismatch ((((class color)) (:background "red4"))))
  '(yas/field-highlight-face ((t (:background "DimGrey" :underline "white")))))
 
 ;; -----------------------------------------------------------------------------
@@ -239,10 +236,13 @@
 ;; Color Themes
 ;(require 'color-theme-autoload "color-theme-autoloads")
 (require 'color-theme)
+
 (require 'color-theme-tango-3)
+(require 'color-theme-solarized)
+
 (eval-after-load "color-theme"
   '(progn (color-theme-initialize)
-          (color-theme-tango-3)))
+          (color-theme-solarized-dark)))
 
 ;; Outlining
 ; Erlang is enabled in the erlang-mode-hook above.
