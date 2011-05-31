@@ -148,6 +148,35 @@
 ; '(show-paren-mismatch ((((class color)) (:background "red4"))))
  '(yas/field-highlight-face ((t (:background "DimGrey" :underline "white")))))
 
+;;**************************************************
+;; font Searching
+;;**************************************************
+;; http://superuser.com/questions/265851/setting-default-font-in-emacs
+
+(defun font-existsp (font)
+  "Check that a font exists: http://www.emacswiki.org/emacs/SetFonts#toc8"
+  (and (window-system)
+       (fboundp 'x-list-fonts)
+       (x-list-fonts font)))
+
+(setq kjfletch-font-list
+      '(;; List of fonts to search for in order of priority.
+        ;; Each has it's own line for easy transposing.
+        "Menlo-10"
+        "Consolas-10"
+        "Monospace-10"
+        ))
+
+(let* ((in-loop t)
+       (font (car kjfletch-font-list))
+       (rest (cdr kjfletch-font-list)))
+  (while (and font in-loop)
+    (when (font-existsp font)
+      (set-face-attribute 'default nil :font font)
+      (setq in-loop nil))
+    (setq font (car rest)
+          rest (cdr rest))))
+
 ;; -----------------------------------------------------------------------------
 
 ;; Erlang Mode
